@@ -72,8 +72,18 @@ for i, v in enumerate(values):
 plt.show()
 
 
+# Visualize the metrics for Decision Tree
+metrics = ['RMSE', 'MAE', 'R^2']
+values = [rmse_dt, mae_dt, r2_dt]
 
-
+plt.figure(figsize=(6, 4))
+plt.bar(metrics, values, color=['skyblue', 'lightgreen', 'salmon'])
+plt.title('Decision Tree Performance Metrics')
+plt.ylabel('Score')
+plt.ylim(0, max(values) + 0.5)
+for i, v in enumerate(values):
+    plt.text(i, v + 0.02, f"{v:.2f}", ha='center', va='bottom')
+plt.show()
 
 
 
